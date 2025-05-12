@@ -29,16 +29,35 @@
         }
     </style>
 </head>
-<body>
+<body> 
     <section>
-    <h1>Contador </h1>
-    <p>0</p>
-    <button onclick="diminuir()"menos></button>
-    <button onclick="aumentar()"mais></button>
-    </section>
+        <h1>Contador </h1>
+        <p id= "resultado"></p> 
+        <button onclick="diminuir()">menos</button>
+        <button onclick="aumentar()">mais</button>
+   </section>
     <script>
-        
 
+        // estado de minha aplicação
+        let numero = 0 
+
+        // alterações de estados da aplicação
+        function aumentar(){
+            numero = numero + 1
+            mostrarNaTela()
+        }
+        function diminuir(){
+            numero = numero - 1
+            mostrarNaTela()
+        }
+        // jogar o estado da aplicação na tela
+        function mostrarNaTela(){
+            const p = document.querySelector("#resultado")
+            
+            p.innerText = numero
+        }
+        // iniciar
+        mostrarNaTela()
     </script>
 </body>
 </html>
